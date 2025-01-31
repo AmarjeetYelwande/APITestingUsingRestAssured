@@ -1,0 +1,28 @@
+{
+  "bookings": [
+    {
+      "id": 1,
+      "firstname": "Steve",
+      "lastname": "Smith",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2025-02-25",
+        "checkout": "2025-10-25"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    {
+      "id": 2,
+      "firstname": "Lucy",
+      "lastname": "hunt",
+      "totalprice": 100,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2025-02-25",
+        "checkout": "2025-10-25"
+      },
+      "additionalneeds": "juice only"
+    }
+  ]
+}
