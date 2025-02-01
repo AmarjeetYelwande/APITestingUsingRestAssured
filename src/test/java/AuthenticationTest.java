@@ -36,6 +36,7 @@ public class AuthenticationTest extends BaseTest {
                 .get("/me");
 
         Assert.assertEquals(response.getStatusCode(), 200, "Status code should be 200, but it's not");
+        Assert.assertEquals(responseSuccessfulAuth.getStatusCode(), 200, "Status code should be 200, but it's not");
         String firstName = responseSuccessfulAuth.jsonPath().getString("firstName");
         String lastName = responseSuccessfulAuth.jsonPath().getString("lastName");
         String email = responseSuccessfulAuth.jsonPath().getString("email");

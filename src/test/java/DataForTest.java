@@ -1,9 +1,9 @@
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
-import org.json.JSONObject;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+
 public class DataForTest {
     protected RequestSpecification spec;
 
@@ -17,24 +17,16 @@ public class DataForTest {
     @DataProvider(name = "dataForDelete")
     public Object[] dataForDelete() {
         return new Object[]{
-                1,2
+                1, 2
         };
     }
 
     @DataProvider(name = "DataForPost")
-    public JSONObject createData() {
-        JSONObject body = new JSONObject();
-        body.put("firstname", "Dmitry");
-        body.put("lastname", "Shyshkin");
-        body.put("totalprice", 150);
-        body.put("depositpaid", false);
-
-        JSONObject bookingdates = new JSONObject();
-        bookingdates.put("checkin", "2020-03-25");
-        bookingdates.put("checkout", "2020-03-27");
-        body.put("bookingdates", bookingdates);
-        body.put("additionalneeds", "Baby crib");
-
-        return body;
+    public Object[][] createData() {
+        return new Object[][] {
+                {"Albert", "Einstein", 150, false, "2020-03-25", "2020-03-27", "Baby crib"},
+                {"Thomas", "Edison",  150, false, "2020-03-25", "2020-03-27", "full"},
+                {"Henry", "Ford",  150, false, "2020-03-25", "2020-03-27", "half"}
+        };
     }
 }
