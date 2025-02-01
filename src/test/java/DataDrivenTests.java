@@ -1,5 +1,3 @@
-
-
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.*;
 
@@ -12,8 +10,6 @@ import org.testng.annotations.Test;
 import io.restassured.http.ContentType;
 
 public class DataDrivenTests extends DataForTest {
-
-
 
     @Test
     public void simpleGetRequest(){
