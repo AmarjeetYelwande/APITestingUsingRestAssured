@@ -3,7 +3,7 @@
 <!--<suite name="All Test Suite">
     <parameter name="Id" value="1"/>
     <test verbose="2" preserve-order="true"
-          name="/src/test/java/DataDrivenTests.java">
+          name="/src/test/java/DataDrivenTest.java">
         <classes/>
     </test>
 </suite>-->
@@ -12,8 +12,11 @@
 <parameter name="id" value="3"/>
 <test name="MultipleTestClasses">
     <classes>
-        <class name="DataDrivenTests"/>
-        <class name="ResourceCreateTests"/>
+        <class name="AuthenticationTest">
+            <methods>
+                <include name="bearerAuthentication" />
+            </methods>
+        </class>
     </classes>
 </test>
 </suite>
