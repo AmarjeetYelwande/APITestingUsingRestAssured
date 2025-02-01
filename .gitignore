@@ -1,0 +1,13 @@
+/target/
+/shelf/
+/workspace.xml
+/.gitignore
+/codeStyles/codeStyleConfig.xml
+/compiler.xml
+/encodings.xml
+/jarRepositories.xml
+/misc.xml
+/codeStyles/Project.xml
+/vcs.xml
+
+/.idea/
