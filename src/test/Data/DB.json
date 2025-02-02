@@ -5,12 +5,12 @@
       "firstname": "Steve",
       "lastname": "Smith",
       "totalprice": 111,
-      "depositpaid": true,
+      "depositpaid": false,
       "bookingdates": {
         "checkin": "2025-02-25",
         "checkout": "2025-10-25"
       },
-      "additionalneeds": "Breakfast"
+      "additionalneeds": "Full breakfast please"
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
         "checkin": "2025-02-25",
         "checkout": "2025-10-25"
       },
-      "additionalneeds": "juice only"
+      "additionalneeds": "Water only please"
     }
   ]
 }

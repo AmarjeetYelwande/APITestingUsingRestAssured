@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "firstname": "Steve",
+    "lastname": "Smith",
+    "totalprice": 10,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2013-02-25",
+        "checkout": "2014-10-25"
+    },
+    "additionalneeds": "Breakfast"
+}
