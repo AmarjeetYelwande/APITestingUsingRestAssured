@@ -12,11 +12,6 @@ import java.util.List;
 
 public class DataDrivenTest extends DataForTest {
 
-    @Test
-    public void simpleGetRequest() {
-        RestAssured.given(spec).when().get("/").then().statusCode(200).log().all();
-    }
-
     @Test(dataProvider = "DataForPost")
     public void simplePostRequest(String firstname,
                                   String lastname,
@@ -50,6 +45,41 @@ public class DataDrivenTest extends DataForTest {
                 when().
                 post("/bookings").then().statusCode(201);
     }
+
+    @Test(dataProvider = "DataForPostFromCSV")
+    public void simplePostRequestUsingCSV(String firstname,
+                                  String lastname,
+                                  Integer totalprice,
+                                  String despositpaid,
+                                  String checkin,
+                                  String checout,
+                                  String additionalneeds
+    ) {
+
+        JSONObject body = new JSONObject();
+        body.put("firstname", firstname);
+        body.put("lastname", lastname);
+        body.put("totalprice", totalprice);
+        body.put("depositpaid", Boolean.parseBoolean(despositpaid));
+
+        JSONObject bookingdates = new JSONObject();
+        bookingdates.put("checkin", checkin);
+        bookingdates.put("checkout",  checout);
+        body.put("bookingdates", bookingdates);
+        body.put("additionalneeds", additionalneeds);
+
+        JSONObject mainObj = new JSONObject();
+        mainObj.put("bookings", body);
+
+        given(spec).
+                contentType(ContentType.JSON).
+                accept(ContentType.JSON).
+                header("Content-Type", "application/json").
+                body(mainObj.toString()).
+                when().
+                post("/bookings").then().statusCode(201);
+    }
+
 
     @Test(dataProvider = "dataForDelete")
     public void SimpleDeleteRequest(int Id) {

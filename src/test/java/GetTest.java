@@ -1,3 +1,4 @@
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -10,6 +11,11 @@ import static io.restassured.RestAssured.given;
 public class GetTest extends BaseTest {
 
     List<Integer> allIds;
+
+    @Test
+    public void simpleGetRequest() {
+        RestAssured.given(spec).when().get("/").then().statusCode(200).log().all();
+    }
     @Test
     public void getAllIds() {
         Response getAllIds = given().
