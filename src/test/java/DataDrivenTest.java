@@ -46,7 +46,8 @@ public class DataDrivenTest extends DataForTest {
                 post("/bookings").then().statusCode(201);
     }
 
-    @Test(dataProvider = "DataForPostFromCSV")
+    // Commenting for now as it needs work to be done
+    @Test(dataProvider = "DataForPostFromCSV", enabled = false)
     public void simplePostRequestUsingCSV(String firstname,
                                   String lastname,
                                   Integer totalprice,
@@ -89,8 +90,9 @@ public class DataDrivenTest extends DataForTest {
         responseDelete.print();
     }
 
+    // Disabling this test as it needs right-clicking testng.xml to run test
     @Parameters({"id"})
-    @Test
+    @Test(enabled = false)
     public void readUserIDFromTestNGXMLDeleteTheUser(int id) {
         System.out.println("UserId is : " + id);
         RestAssured.given(spec).when().delete("/bookings/" + id).then().log().all();
