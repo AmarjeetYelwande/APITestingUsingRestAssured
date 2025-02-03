@@ -8,8 +8,8 @@
     </test>
 </suite>-->
 
-<suite name="Suite">
-<parameter name="id" value="3"/>
+<suite name="RestAssuredTests" parallel="methods" thread-count="2">
+<parameter name="id" value="5"/>
 <test name="MultipleTestClasses">
     <classes>
         <class name="AuthenticationTest">
@@ -17,6 +17,13 @@
                 <include name="bearerAuthentication" />
             </methods>
         </class>
+        <!--
+        <class name="DataDrivenTest">
+            <methods>
+                <include name="readUserIDFromTestNGXMLDeleteTheUser" />
+            </methods>
+        </class>
+        -->
     </classes>
 </test>
 </suite>

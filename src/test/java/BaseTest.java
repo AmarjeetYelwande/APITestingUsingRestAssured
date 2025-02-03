@@ -13,13 +13,14 @@ public class BaseTest {
     public void setUp() {
         spec = new RequestSpecBuilder().
                 setBaseUri("http://localhost:3000").
+                setContentType(ContentType.JSON).
                 build();
     }
     protected Response createRecord() {
         // Create JSON body
         JSONObject body = new JSONObject();
-        body.put("firstname", "Dmitry");
-        body.put("lastname", "Shyshkin");
+        body.put("firstname", "Steve");
+        body.put("lastname", "Smith");
         body.put("totalprice", 150);
         body.put("depositpaid", false);
 
@@ -27,7 +28,7 @@ public class BaseTest {
         bookingdates.put("checkin", "2020-03-25");
         bookingdates.put("checkout", "2020-03-27");
         body.put("bookingdates", bookingdates);
-        body.put("additionalneeds", "Baby crib");
+        body.put("additionalneeds", "Full Breakfast");
 
         JSONObject mainObj = new JSONObject();
         mainObj.put("bookings", body);
