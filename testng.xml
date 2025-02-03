@@ -8,7 +8,7 @@
     </test>
 </suite>-->
 
-<suite name="Suite">
+<suite name="RestAssuredTests" parallel="methods" thread-count="2">
 <parameter name="id" value="5"/>
 <test name="MultipleTestClasses">
     <classes>

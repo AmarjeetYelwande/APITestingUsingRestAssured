@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "totalprice": {
+      "type": "integer"
+    },
+    "depositpaid": {
+      "type": "boolean"
+    },
+    "bookingdates": {
+      "type": "object",
+      "properties": {
+        "checkin": {
+          "type": "string"
+        },
+        "checkout": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkin",
+        "checkout"
+      ]
+    },
+    "additionalneeds": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "firstname",
+    "lastname",
+    "totalprice",
+    "depositpaid",
+    "bookingdates",
+    "additionalneeds"
+  ]
+}
