@@ -1,18 +1,13 @@
-
+import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import io.restassured.module.jsv.JsonSchemaValidator;
-
 import java.io.File;
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class GetTest extends BaseTest {
 
@@ -22,6 +17,9 @@ public class GetTest extends BaseTest {
     public void simpleGetRequest() {
         RestAssured.given(spec).when().get("/").then().statusCode(200).log().all();
     }
+
+
+
     @Test
     public void getAllIds() {
         Response getAllIds = given().
